@@ -61,34 +61,6 @@ namespace LW1
 
         }
 
-        //public static List<int> CaclulatePrimeNumsByEratosthenesSieve(int end)
-        //{
-
-        //    List<int> primeNumHelperList = new List<int>();
-        //    //Add First checked sequence
-        //    for (int i = 2; i <= end; i++)
-        //        primeNumHelperList.Add(i);
-
-        //    //Check Prime Numbers
-        //    primeNumHelperList = primeNumHelperList.OrderBy(p => p).ToList();
-        //    int couner = 0;
-        //    int startCountNums = 0;
-        //    int endCountNums = -1;
-        //    do
-        //    {
-
-        //        int currnetChekedNum = primeNumHelperList[couner];
-        //        primeNumHelperList = primeNumHelperList.Where(p => p % currnetChekedNum != 0).ToList();
-        //        primeNumHelperList.Insert(couner, currnetChekedNum);
-        //        endCountNums = primeNumHelperList.Count;
-        //        couner++;
-
-
-
-        //    } while (startCountNums != endCountNums);
-        //    return primeNumHelperList;
-
-        //} 
         public static List<int> CaclulatePrimeNumsByEratosthenesSieve(int end)
         {
             int maxNumForCheckPrimeRange = (int)Math.Sqrt(end);
