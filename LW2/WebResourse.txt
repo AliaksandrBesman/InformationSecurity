@@ -1,0 +1,5 @@
+        //решение через инвариант цикла  (https://www.youtube.com/watch?v=FJomPdN_lmY)
+        //http://algolist.ru/maths/teornum/nod.php
+
+https://vscode.ru/prog-lessons/shifr-vizhenera.html
+https://olegon.ru/showthread.php?t=31299
