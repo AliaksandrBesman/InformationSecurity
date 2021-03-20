@@ -24,9 +24,9 @@ namespace LW1
             Console.WriteLine();
             Console.WriteLine("Count prim nums : " + primeNums.Count.ToString());
 
-            PrimeNumHelper.PrintCancatenateFormForNumber(PrimeNumHelper.CaclulatePrimeNumsByEratosthenesSieve(m), m);
-            PrimeNumHelper.PrintCancatenateFormForNumber(PrimeNumHelper.CaclulatePrimeNumsByEratosthenesSieve(oneValue), oneValue);
-            Console.WriteLine("Count prime nums by log: " + Math.Round(oneValue / Math.Log(oneValue)));
+            PrimeNumHelper.PrintPrimeNumbersSequenceForNumber(PrimeNumHelper.CalculatePrimeNumsByEratosthenesSieve(m ), m);
+            PrimeNumHelper.PrintPrimeNumbersSequenceForRange( PrimeNumHelper.CalculatePrimeNumsByEratosthenesSieve(m , n), m,n);
+            Console.WriteLine("Count prime nums by log: " + Math.Round(m / Math.Log(m)));
         }
     }
 }
