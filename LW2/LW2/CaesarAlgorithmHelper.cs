@@ -8,51 +8,37 @@ namespace LW2
 {
     class CaesarAlgorithmHelper
     {
-        int N, a, b;
-        Dictionary<int, char> mainDictionary;
-        Dictionary<char, char> encryptDictionary;
-        Dictionary<char, char> decryptDictionary;
+        int N, //Alphabet size
+            a, b,
+            inverseA;
+        string alphabet;
 
-        public void LoadDictionary(string dictionary)
+        public void LoadAlphabet(string dictionary)
         {
-            for (int i = 0; i < dictionary.Length; i++)
-                mainDictionary.Add(i, dictionary[i] );
+            alphabet = dictionary;
             N = dictionary.Length;
         }
 
-       public CaesarAlgorithmHelper()
-        {
-            mainDictionary = new Dictionary<int, char>();
-            encryptDictionary = new Dictionary<char, char>();
-            decryptDictionary = new Dictionary<char, char>();
-        }
-
-
-        private void GenerateEncryptDictionary()
-        {
-            for (int i = 0; i < mainDictionary.Count; i++)
-            encryptDictionary.Add(mainDictionary[i], mainDictionary[EncryptCharacter(i)]);
-            decryptDictionary = encryptDictionary.ToDictionary(p=>p.Value,p=>p.Key );
-            
-        }
-        private int EncryptCharacter(int index) => (a * index + b)%N;
+        private int EncryptCharacterByCaesarSAffinitySystem(int index) => (a * index + b)%N;
        
-        public string EncryptCaesarSAffinitySystem(string message, int a, int b)
+        public string EncryptMessageByCaesarSAffinitySystem(string message, int a, int b)
         {
             this.a = a;
             this.b = b;
-            GenerateEncryptDictionary();
-            StringBuilder stringBuilder = new StringBuilder(message);
-            for (int i = 0; i < message.Length; i++)
-                stringBuilder[i] = encryptDictionary[stringBuilder[i]];
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (char character in message)
+                stringBuilder.Append(alphabet[EncryptCharacterByCaesarSAffinitySystem(alphabet.IndexOf(character))]);
             return stringBuilder.ToString();
         }
 
-        public string DecryptCaesarSAffinitySystem(string message)
+        private int DecryptCharacterByCaesarSAffinitySystem(int index) => (inverseA*(index + N - b)) % N;
+
+        public string DecryptMessageByCaesarSAffinitySystem(string message)
         {
-            StringBuilder stringBuilder = new StringBuilder(message);
-            for (int i = 0; i < message.Length; i++)
-                stringBuilder[i] = decryptDictionary[stringBuilder[i]];
+            StringBuilder stringBuilder = new StringBuilder();
+            inverseA = (int)Inverse(a, N);
+            foreach (char character in message)
+                stringBuilder.Append(alphabet[DecryptCharacterByCaesarSAffinitySystem(alphabet.IndexOf(character))]);
             return stringBuilder.ToString();
         }
         public static void Extended_euclid(long a, long b, out long x, out long y, out long d)

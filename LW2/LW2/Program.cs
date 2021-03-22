@@ -13,18 +13,17 @@ namespace LW2
             long a = 5, b = 999, d, x, y;
 
             CaesarAlgorithmHelper.Extended_euclid(a, b, out x, out y, out d);
-
-
             Console.WriteLine($"x = {x} y = {y} d = {d}");
             Console.WriteLine(CaesarAlgorithmHelper.Inverse(17, 999));
+
             string dictionary = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             CaesarAlgorithmHelper caesarAlgorithm = new CaesarAlgorithmHelper();
-            caesarAlgorithm.LoadDictionary(dictionary);
+            caesarAlgorithm.LoadAlphabet(dictionary);
             string message = "VENIVIDIVICI";
             Console.WriteLine("Message: " + message);
-            string encryptMessage = caesarAlgorithm.EncryptCaesarSAffinitySystem(message,3,5);
+            string encryptMessage = caesarAlgorithm.EncryptMessageByCaesarSAffinitySystem(message,3,5);
             Console .WriteLine ( "Encrypt message: " + encryptMessage) ;
-            string decryptMessage = caesarAlgorithm.DecryptCaesarSAffinitySystem(encryptMessage);
+            string decryptMessage = caesarAlgorithm.DecryptMessageByCaesarSAffinitySystem(encryptMessage);
             Console.WriteLine("Decrypt message: " + decryptMessage);
 
             //Виженер
