@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace LW3
 {
-    class MultiplePermutationMatrix
-    {
-
-    }
     class MultiplePermutation
     {
         string horizontalWord,
@@ -164,26 +160,5 @@ namespace LW3
             return decryptMatrixHelper;
         }
 
-        
-
-        static public  int[] GenerateCharacterSequenceByIndexes(string word)
-        {
-            List<int> charactersIndexes;
-            Dictionary<char, int> temp = new Dictionary<char, int>();
-            string tempSortedCharacters = word.OrderBy(p=>p).ToString();
-            string tempSoterIndexes= "";
-            for (int ii = 0; ii < tempSortedCharacters.Length; ii++)
-                tempSoterIndexes += ii.ToString();
-
-
-            StringBuilder indexCharacters = new StringBuilder();
-            for (int ii=0;ii<word.Length;ii ++)
-            {
-                indexCharacters.Append(tempSoterIndexes[tempSortedCharacters.IndexOf(word[ii])+ii]);
-                tempSortedCharacters = tempSortedCharacters.Remove(0, 1);
-            }
-            
-            return null;
-        }
     }
 }

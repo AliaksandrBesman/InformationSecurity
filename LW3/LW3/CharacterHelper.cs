@@ -8,6 +8,7 @@ namespace LW3
 {
     class CharacterHelper
     {
+        static public string alphaberEn = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         static public Dictionary<char, int> dictionaryCharacterIndexes;
         static CharacterHelper()
         {

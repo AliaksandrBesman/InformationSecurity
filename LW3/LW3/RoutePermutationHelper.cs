@@ -12,7 +12,6 @@ namespace LW3
         {
             public string Encrypt(MatrixHelper matrix)
             {
-
                 return SpiralPermutate(matrix);
             }
             public MatrixHelper Decrypt(string message, int rows, int columns)
@@ -98,7 +97,6 @@ namespace LW3
                     j1--;
                 }
                 return matrix;
-
             }
         }
     }
