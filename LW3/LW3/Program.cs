@@ -33,8 +33,6 @@ namespace LW3
             multiplePermutation.LoadData(matrix2, "HELL", "KILP");
             multiplePermutation.Encrypt().PrintMatrix();
             multiplePermutation.Decrypt().PrintMatrix();
-            var fff =MultiplePermutation.GenerateCharacterSequenceByIndexes("CBCA");
-
             //Console.WriteLine("check: " + 'b' % 'a');
         }
 
