@@ -29,9 +29,13 @@ namespace LW2
             //Виженер
             VigenereHelper vigenereHelper = new VigenereHelper();
             vigenereHelper.LoadDictionary(dictionary);
+            Console.WriteLine("Start message frequency");
+            FrequencyHelper.CalculateFrequency(message);
              encryptMessage = vigenereHelper.Encode(message,"ALEX");
             Console.WriteLine("Encrypt message: " + encryptMessage);
-             decryptMessage = vigenereHelper.Decode(encryptMessage,"ALEX");
+            Console.WriteLine("Encrypt message frequency");
+            FrequencyHelper.CalculateFrequency(encryptMessage);
+            decryptMessage = vigenereHelper.Decode(encryptMessage,"ALEX");
             Console.WriteLine("Decrypt message: " + decryptMessage);
         }
     }
