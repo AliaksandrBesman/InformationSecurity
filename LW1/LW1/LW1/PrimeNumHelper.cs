@@ -12,7 +12,6 @@ namespace LW1
         {
             int count = end - st + 1;
             int nod = 0;
-
             int result = 0;
             int ost = 0;
             for (int i = st; i <= end; i++)
@@ -35,7 +34,6 @@ namespace LW1
             }
             return count;
         }
-
 
 
         public static List<int> CalculatePrimeNumsByEratosthenesSieve(int st, int end)
@@ -61,7 +59,7 @@ namespace LW1
 
         }
 
-        public static List<int> CaclulatePrimeNumsByEratosthenesSieve(int end)
+        public static List<int> CalculatePrimeNumsByEratosthenesSieve(int end)
         {
             int maxNumForCheckPrimeRange = (int)Math.Sqrt(end);
             List<int> primeNumHelperList = new List<int>();
@@ -80,12 +78,24 @@ namespace LW1
             return primeNumHelperList;
         }
 
-        public static void PrintCancatenateFormForNumber(List<int> primeNums, int number)
+        public static void PrintPrimeNumbersSequenceForNumber(List<int> primeNums, int number)
         {
-            Console.Write(number + " = ");
+            Console.Write(number + ": ");
             for (int i = 0; i < primeNums.Count - 1; i++)
             {
-                Console.Write(primeNums[i] + " * ");
+                Console.Write(primeNums[i] + " , ");
+            }
+            Console.Write(primeNums[primeNums.Count - 1] + " ");
+
+            Console.WriteLine("Prime Nums Count: " + primeNums.Count);
+        }
+
+        public static void PrintPrimeNumbersSequenceForRange(List<int> primeNums, int stNumber, int endNumber)
+        {
+            Console.Write("["+stNumber + " : " + endNumber + "] :");
+            for (int i = 0; i < primeNums.Count - 1; i++)
+            {
+                Console.Write(primeNums[i] + " , ");
             }
             Console.Write(primeNums[primeNums.Count - 1] + " ");
 
