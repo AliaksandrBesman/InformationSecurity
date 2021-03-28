@@ -10,23 +10,30 @@ namespace LW4
     {
         static void Main(string[] args)
         {
-          
-            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string alphabet2 = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-            string alphabet3 = "DEFGHIJUVWXYZABCKLMNOPQRST";
-            string alphabet4 = "ABCKLMNDEFGHIJUVWXYZOPQRST";
-            RotorsManager rotorsManager = new RotorsManager(alphabet);
-            rotorsManager.LoadRotor(new Rotor(alphabet2, 1));
-            rotorsManager.LoadRotor(new Rotor(alphabet3, 2));
-            rotorsManager.SetReflector(new Reflector(alphabet, alphabet4));
-           char ecnryptCharacter =  rotorsManager.EncryptCharacter('M');
-            Console.WriteLine(ecnryptCharacter);
-            RotorsManager rotorsManager2 = new RotorsManager(alphabet);
-            rotorsManager2.LoadRotor(new Rotor(alphabet2, 1));
-            rotorsManager2.LoadRotor(new Rotor(alphabet3, 2));
-            rotorsManager2.SetReflector(new Reflector(alphabet, alphabet4));
-            char denryptCharacter = rotorsManager.EncryptCharacter(ecnryptCharacter);
-            Console.WriteLine(denryptCharacter);
+            //Encrypt
+            EnigmaManager enigma = new EnigmaManager(RotorsConstants.inputValue);
+            enigma.LoadRotor(new Rotor(RotorsConstants.rotorII, 1));
+            enigma.LoadRotor(new Rotor(RotorsConstants.rotorIII, 0));
+            enigma.LoadRotor(new Rotor(RotorsConstants.rotorV, 1));
+            enigma.SetReflector(new Reflector(ReflectorsConstants.reflectorC));
+            string message = "HELLOWORLD";
+            StringBuilder encryptMessage = new StringBuilder();
+            foreach (char input in message)
+                encryptMessage.Append(enigma.EncryptDecryptCharacter(input));
+            Console.WriteLine(encryptMessage);
+            //Decrypt
+            EnigmaManager enigma2 = new EnigmaManager(RotorsConstants.inputValue);
+            enigma2.LoadRotor(new Rotor(RotorsConstants.rotorII, 1));
+            enigma2.LoadRotor(new Rotor(RotorsConstants.rotorIII, 0));
+            enigma2.LoadRotor(new Rotor(RotorsConstants.rotorV, 1));
+            enigma2.SetReflector(new Reflector(ReflectorsConstants.reflectorC));
+            StringBuilder decryptMessage = new StringBuilder();
+            foreach (char input in encryptMessage.ToString())
+                decryptMessage.Append(enigma2.EncryptDecryptCharacter(input));
+            Console.WriteLine(decryptMessage);
+
+
+
         }
     }
 }

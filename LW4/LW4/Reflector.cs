@@ -8,15 +8,13 @@ namespace LW4
 {
     class Reflector
     {
-        string alphabet;
-        string replaceAlphabet;
+        Dictionary<char, char> valuePairs;
 
-        public Reflector ( string alphabet, string replaceAlphabet)
+        public Reflector(Dictionary<char, char> valuePairs)
         {
-            this.alphabet = alphabet;
-            this.replaceAlphabet = replaceAlphabet;
+            this.valuePairs = valuePairs;
         }
 
-        public char GetReplaceCharacter(char character) => replaceAlphabet[alphabet.IndexOf(character)];
+        public char GetReplaceCharacter(char character) => valuePairs[character];
     }
 }
