@@ -1,0 +1,34 @@
+﻿<Window x:Class="LW6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LW6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Label  Grid.Row="0" Grid.Column="0" Height="30"  >p</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="pTextBx"  Height="30" />
+        <Label  Grid.Row="1" Grid.Column="0"  Height="30"  >q</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="qTextBx" Height="30"  />
+        <Label  Grid.Row="2" Grid.Column="0" Height="30"  >e</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="eTextBx"   Height="30" />
+        <Label  Grid.Row="3" Grid.Column="0" Height="30"  >Start Value</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="SrartVakueTextBx"   Height="30" />
+        <Label  Grid.Row="4" Grid.Column="0" Height="30"  >Result</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="resTextBx" TextWrapping="Wrap"    />
+        <Button Grid.Row="2" Grid.Column="2" Click="Encrypt">Generate</Button>
+    </Grid>
+</Window>
