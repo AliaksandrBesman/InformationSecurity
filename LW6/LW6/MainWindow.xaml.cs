@@ -93,7 +93,7 @@ namespace LW6
                     {
                         string encText = "";
                         encText += ((int)(Math.Pow(startValue, E) % n)).ToString();
-                        resTextBx.Text += encText;
+                        resTextBx.Text += encText+" ";
                         startValue = int.Parse(encText);
                         counter++;
                     } while (counter < 10);
